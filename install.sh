@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Git
-ln -s ~/dotfiles/git/.gitconfig ~/.gitconfig
+ln -sf ~/dotfiles/git/.gitconfig ~/.gitconfig
 
 # Shell
-ln -s ~/dotfiles/shell/.bashrc ~/.bashrc
+ln -sf ~/dotfiles/shell/.bashrc ~/.bashrc
