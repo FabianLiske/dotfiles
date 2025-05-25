@@ -18,3 +18,8 @@ ln -sf ~/dotfiles/terminal/catppuccin_macchiato.toml ~/.config/alacritty/catppuc
 mkdir -p ~/.config/btop
 
 ln -sf ~/dotfiles/btop/btop.conf ~/.config/btop/btop.conf
+
+# fastfetch
+mkdir -p ~/.config/fastfetch
+
+ln -sf ~/dotfiles/fastfetch/config.jsonc ~/.config/fastfetch/config.jsonc
