@@ -4,7 +4,9 @@
 ln -sf ~/dotfiles/git/.gitconfig ~/.gitconfig
 
 # Shell
+mkdir -p ~/.config
 ln -sf ~/dotfiles/shell/.bashrc ~/.bashrc
+ln -sf ~/dotfiles/shell/starship.toml
 
 # Terminal
 mkdir -p ~/.config/alacritty
