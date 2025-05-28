@@ -1,11 +1,11 @@
 Config Files:
 
-- [ ] btop
-- [ ] fastfetch
-- [ ] hypr
-- [ ] kitty
-- [ ] waybar
-- [ ] wofi
+- [X] btop
+- [X] fastfetch
+- [X] hypr
+- [X] kitty
+- [X] waybar
+- [X] wofi
 
 Scripts:
 
