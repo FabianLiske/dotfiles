@@ -122,7 +122,7 @@ echo -e "${NONE}"
 sudo systemctl enable NetworkManager
 sudo systemctl enable sddm
 
-bash "$HOME/dotfiles/install-conf.sh"
+#bash "$HOME/dotfiles/install-conf.sh"
 
 # cleanup
 echo -e "${GREEN}"
