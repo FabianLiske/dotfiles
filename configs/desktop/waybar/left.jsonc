@@ -1,0 +1,107 @@
+{
+  "layer": "top",
+  "position": "top",
+  "output": "DP-3",
+  "height": 40,
+  "spacing": 0,
+  "modules-left": [
+    "hyprland/workspaces",
+    "tray",
+    "custom/lock",
+    "custom/reboot",
+    "custom/power",
+    "clock"
+  ],
+  "hyprland/workspaces": {
+    "disable-scroll": false,
+    "all-outputs": true,
+    "format": "{icon}",
+    "on-click": "activate",
+    "persistent-workspaces": {
+    "*":[1,2,3,4,5,6,7]
+    },
+    "format-icons":{
+    "1": "1",
+    "2": "2",
+    "3": "3",
+    "4": "4",
+    "5": "5",
+    "6": "6",
+    "7": "7",
+    "active": "󱓻"
+    }
+  },
+  "custom/lock": {
+  "format": "  ",
+  "on-click": "hyprlock",
+  "tooltip": true,
+  "tooltip-format": "Lock"
+  },
+  "custom/reboot": {
+    "format": "  ",
+    "on-click": "systemctl reboot",
+    "tooltip": true,
+    "tooltip-format": "Reboot"
+  },
+  "custom/power": {
+    "format": "  ",
+    "on-click": "systemctl poweroff",
+    "tooltip": true,
+    "tooltip-format": "Shutdown"
+  },
+  "network": {
+    "format-ethernet": " Wired ",
+    "tooltip-format": "<span color='#FF1493'> 󰅧 </span>{bandwidthUpBytes}  <span color='#00BFFF'> 󰅢 </span>{bandwidthDownBytes}",
+    "format-linked": " 󱘖 {ifname} (No IP) ",
+    "format-disconnected": "  Disconnected ",
+    "interval": 1
+  },
+  "pulseaudio": {
+    "format": "{icon}{volume}% ",
+    "format-muted": " 󰖁 0% ",
+    "format-icons": {
+      "headphone": "  ",
+      "hands-free": "  ",
+      "headset": "  ",
+      "phone": "  ",
+      "portable": "  ",
+      "car": "  ",
+      "default": [
+        "  ",
+        "  ",
+        "  "
+      ]
+    },
+    "on-click-right": "pavucontrol -t 3",
+    "on-click": "pactl -- set-sink-mute 0 toggle",
+    "tooltip": true,
+    "tooltip-format": "Volume: {volume}%"
+  },
+  "custom/temperature": {
+    "exec": "sensors | awk '/Tctl:/ { gsub(/[^0-9.]/, \"\", $2); printf(\"%d\\n\", $2); exit }'",
+    "format": " {}°C ",
+    "interval": 5,
+    "tooltip": true,
+    "tooltip-format": "CPU Temp: {}°C"
+  },
+  "memory": {
+    "format": "  {used:0.1f}G/{total:0.1f}G ",
+    "tooltip": true,
+    "tooltip-format": "RAM Usage: {used:0.2f}G/{total:0.2f}G"
+  },
+  "cpu": {
+    "format": "  {usage}% ",
+    "tooltip": true
+  },
+  "clock": {
+    "interval": 1,
+    "timezone": "Europe/Berlin",
+    "format": "  {:%H:%M} ",
+    "tooltip": true,
+    "tooltip-format": "{:L%d.%m.%Y, %A}"
+  },
+  "tray": {
+    "icon-size": 12,
+    "spacing": 6
+  }
+}
