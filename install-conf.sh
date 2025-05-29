@@ -11,6 +11,7 @@ CONF="$HOME/.config"
 
 # Ensure target directory
 mkdir -p "$CONF"
+mkdir -p "$HOME/.local/share/fonts"
 
 ###############
 ### DESKTOP ###
@@ -61,3 +62,9 @@ ln -sf "$SRC/shell/starship.toml" "$CONF/starship.toml"
 
 # Kitty
 ln -sf "$SRC/terminal/kitty" "$CONF/kitty"
+
+#############
+### FONTS ###
+#############
+
+ln -sf "$SRC/fonts" "$HOME/.local/share/fonts"
