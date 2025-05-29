@@ -11,3 +11,5 @@ PS1='[\u@\h \W]\$ '
 eval "$(starship init bash)"
 
 export PATH=$PATH:/home/faba/.spicetify
+export XCURSOR_THEME=catppuccin-macchiato-lavender-cursors
+export XCURSOR_SIZE=24

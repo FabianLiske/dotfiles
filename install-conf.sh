@@ -12,6 +12,7 @@ CONF="$HOME/.config"
 # Ensure target directory
 mkdir -p "$CONF"
 mkdir -p "$HOME/.local/share/fonts"
+mkdir -p "$HOME/.icons/default"
 
 ###############
 ### DESKTOP ###
@@ -28,6 +29,9 @@ ln -sf "$SRC/desktop/waybar" "$CONF/waybar"
 
 # Wofi
 ln -sf "$SRC/desktop/wofi" "$CONF/wofi"
+
+# Icons
+ln -sf "$SRC/dektop/icons" "$HOME/.icons/default"
 
 ##############
 ### EDITOR ###
