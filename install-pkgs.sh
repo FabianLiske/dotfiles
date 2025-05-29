@@ -82,8 +82,6 @@ echo -e "${NONE}"
 
 sudo pacman -Sy \
     brightnessctl \
-    btop \
-    fastfetch \
     hyprland \
     hyprland-qtutils \
     hyprlock \
@@ -116,11 +114,27 @@ yay -S \
     --noconfirm
 
 echo -e "${GREEN}"
+figlet "Useful Packages"
+echo -e "${NONE}"
+
+sudo pacman -Sy \
+    btop \
+    fastfetch \
+    chromium \
+    code \
+    tree \
+    thunar \
+    thunar-archive-plugin \
+    thunar-volman \
+    --noconfirm
+
+echo -e "${GREEN}"
 figlet "Services"
 echo -e "${NONE}"
 
 sudo systemctl enable NetworkManager
 sudo systemctl enable sddm
+sudo systemctl enable sshd
 
 #bash "$HOME/dotfiles/install-conf.sh"
 
