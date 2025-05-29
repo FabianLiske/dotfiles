@@ -81,6 +81,7 @@ figlet "Hyprland"
 echo -e "${NONE}"
 
 sudo pacman -Sy \
+    brightnessctl \
     hyprland \
     hyprland-qtutils \
     hyprlock \
@@ -89,10 +90,17 @@ sudo pacman -Sy \
     kitty \
     libnotify \
     mako \
+    networkmanager \
+    network-manager-applet \
+    pavucontrol \
+    pipewire \
+    pipewire-pusle \
+    playerctl \
     qt5-wayland \
     qt6-wayland \
     sddm \
     waybar \
+    wireplumber \
     wl-clipboard \
     wofi \
     xdg-desktop-portal-hyprland \
@@ -103,6 +111,13 @@ yay -S \
     wlogout \
     catppuccin-cursors-macchiato \
     --noconfirm
+
+echo -e "${GREEN}"
+figlet "Services"
+echo -e "${NONE}"
+
+sudo systemctl enable NetworkManager
+sudo systemctl enable sddm
 
 bash "$HOME/dotfiles/install-conf.sh"
 
