@@ -101,5 +101,21 @@ sudo pacman -Sy \
 
 yay -S \
     wlogout \
+    catppuccin-cursors-macchiato \
     --noconfirm
 
+bash "$HOME/dotfiles/install-conf.sh"
+
+# cleanup
+echo -e "${GREEN}"
+figlet "Cleanup"
+echo -e "${NONE}"
+sudo pacman -Rns $(pacman -Qtdq) --noconfirm
+yay -Sc --noconfirm
+
+echo -e "${GREEN}"
+figlet "Done"
+echo -e "${NONE}"
+
+echo
+echo "DONE! Please reboot your system!"
