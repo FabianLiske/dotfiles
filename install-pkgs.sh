@@ -82,6 +82,8 @@ echo -e "${NONE}"
 
 sudo pacman -Sy \
     brightnessctl \
+    btop \
+    fastfetch \
     hyprland \
     hyprland-qtutils \
     hyprlock \
@@ -99,6 +101,7 @@ sudo pacman -Sy \
     qt5-wayland \
     qt6-wayland \
     sddm \
+    starship \
     waybar \
     wireplumber \
     wl-clipboard \
