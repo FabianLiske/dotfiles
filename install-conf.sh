@@ -68,3 +68,4 @@ ln -sf "$SRC/terminal/kitty" "$CONF/kitty"
 #############
 
 ln -sf "$SRC/fonts" "$HOME/.local/share/fonts"
+fx-cache -fv
