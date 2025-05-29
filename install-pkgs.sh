@@ -105,6 +105,7 @@ sudo pacman -Sy \
     wl-clipboard \
     wofi \
     xdg-desktop-portal-hyprland \
+    xdg-desktop-portal-gtk \
     xorg-xwayland \
     --noconfirm
 
