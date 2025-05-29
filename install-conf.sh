@@ -1,25 +1,63 @@
 #!/bin/bash
+set -euo pipefail
 
-# Git
-ln -sf ~/dotfiles/git/.gitconfig ~/.gitconfig
+#############
+### SETUP ###
+#############
 
-# Shell
-mkdir -p ~/.config
-ln -sf ~/dotfiles/shell/.bashrc ~/.bashrc
-ln -sf ~/dotfiles/shell/starship.toml ~/.comfig/starship.toml
+# Path Vars
+SRC="$HOME/dotfiles/configs"
+CONF="$HOME/.config"
 
-# Terminal
-mkdir -p ~/.config/alacritty
+# Ensure target directory
+mkdir -p "$CONF"
 
-ln -sf ~/dotfiles/terminal/alacritty.toml ~/.config/alacritty/alacritty.toml
-ln -sf ~/dotfiles/terminal/catppuccin_macchiato.toml ~/.config/alacritty/catppuccin_macchiato.toml
+###############
+### DESKTOP ###
+###############
+
+# Hypr
+ln -sf "$SRC/desktop/hypr" "$CONF/hypr"
+
+# Wallpapers
+ln -sf "$SRC/desktop/wallpaper" "$CONF/wallpaper"
+
+# Waybar
+ln -sf "$SRC/desktop/waybar" "$CONF/waybar"
+
+# Wofi
+ln -sf "$SRC/desktop/wofi" "$CONF/wofi"
+
+##############
+### EDITOR ###
+##############
+
+##################
+### MONITORING ###
+##################
 
 # btop
-mkdir -p ~/.config/btop
+ln -sf "$SRC/monitoring/btop" "$CONF/btop"
 
-ln -sf ~/dotfiles/btop/btop.conf ~/.config/btop/btop.conf
+# Fastfetch
+ln -sf "$SRC/monitoring/fastfetch" "$CONF/fastfetch"
 
-# fastfetch
-mkdir -p ~/.config/fastfetch
+#############
+### SHELL ###
+#############
 
-ln -sf ~/dotfiles/fastfetch/config.jsonc ~/.config/fastfetch/config.jsonc
+# bashrc
+ln -sf "$SRC/shell/.bashrc" "$HOME/.bashrc"
+
+# git
+ln -sf "$SRC/shell/.gitconfig" "$HOME/.gitconfig"
+
+# Starship
+ln -sf "$SRC/shell/starship.toml" "$CONF/starship.toml"
+
+################
+### TERMINAL ###
+################
+
+# Kitty
+ln -sf "$SRC/terminal/kitty" "$CONF/kitty"
