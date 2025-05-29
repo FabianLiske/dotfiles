@@ -94,7 +94,7 @@ sudo pacman -Sy \
     network-manager-applet \
     pavucontrol \
     pipewire \
-    pipewire-pusle \
+    pipewire-pulse \
     playerctl \
     qt5-wayland \
     qt6-wayland \
