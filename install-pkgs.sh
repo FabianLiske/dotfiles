@@ -114,6 +114,10 @@ yay -S \
     catppuccin-cursors-macchiato \
     --noconfirm
 
+sudo systemctl enable NetworkManager
+sudo systemctl enable sddm
+sudo systemctl enable sshd
+
 echo -e "${GREEN}"
 figlet "Useful Packages"
 echo -e "${NONE}"
@@ -121,8 +125,6 @@ echo -e "${NONE}"
 sudo pacman -Sy \
     btop \
     fastfetch \
-    chromium \
-    code \
     tree \
     thunar \
     thunar-archive-plugin \
@@ -130,14 +132,18 @@ sudo pacman -Sy \
     --noconfirm
 
 echo -e "${GREEN}"
-figlet "Services"
+figlet "Programs"
 echo -e "${NONE}"
 
-sudo systemctl enable NetworkManager
-sudo systemctl enable sddm
-sudo systemctl enable sshd
+sudo pacman -Sy \
+    chromium \
+    code \
+    spotify-launcher \
+    --noconfirm
 
-#bash "$HOME/dotfiles/install-conf.sh"
+yay -S \
+    spicetify-cli \
+    --noconfirm
 
 # cleanup
 echo -e "${GREEN}"
