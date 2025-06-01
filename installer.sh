@@ -19,6 +19,23 @@ sudo systemctl enable sshd
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+# Schritt 1: Komplettinstallation anbieten
+echo
+read -p ">> Run all scripts? [y/N] " all
+
+if [[ "$all" =~ ^[YyJj] ]]; then
+    echo -e "\nStart Full Installation ..."
+    bash "$SCRIPT_DIR/scripts/required_packages"
+    bash "$SCRIPT_DIR/scripts/desktop.sh"
+    bash "$SCRIPT_DIR/scripts/deploy_desktop.sh"
+    bash "$SCRIPT_DIR/scripts/utils.sh"
+    bash "$SCRIPT_DIR/scripts/deploy_utils.sh"
+    bash "$SCRIPT_DIR/scripts/code.sh"
+    bash "$SCRIPT_DIR/scripts/spicetify.sh"
+    echo -e "\nFull Installation done. Reboot."
+    exit 0
+fi
+
 # Banner
 echo -e "${GREEN}"
 echo "Module Installer"
