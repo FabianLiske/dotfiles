@@ -14,6 +14,13 @@ NONE='\033[0m'
 
 # Banner
 echo -e "${GREEN}"
+figlet "Packages"
+echo -e "${NONE}"
+
+sudo pacman -Sy code --noconfirm
+
+# Banner
+echo -e "${GREEN}"
 figlet "Code Extensions"
 echo -e "${NONE}"
 
