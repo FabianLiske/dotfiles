@@ -1,0 +1,5 @@
+- [Bitwarden](https://chromewebstore.google.com/detail/bitwarden-passwortmanager/nngceckbapebfimnlniiiahkandclblb) &rarr; nngceckbapebfimnlniiiahkandclblb
+- [uBlock Origin Lite](https://chromewebstore.google.com/detail/ublock-origin-lite/ddkjiahejlhfcafbddmgiahcphecmpfh) &rarr; ddkjiahejlhfcafbddmgiahcphecmpfh
+- [CatppuccinMacchiato](https://chromewebstore.google.com/detail/catppuccin-chrome-theme-m/cmpdlhmnmjhihmcfnigoememnffkimlk) &rarr; cmpdlhmnmjhihmcfnigoememnffkimlk
+- [User-Agent Switcher](https://chromewebstore.google.com/detail/user-agent-switcher-for-c/djflhoibgkdhkhhcedjiklpkjnoahfmg) &rarr; djflhoibgkdhkhhcedjiklpkjnoahfmg
+- [FireShot](https://chromewebstore.google.com/detail/nehmen-sie-vollst%C3%A4ndige-w/mcbpblocgmgfnpjjppndjkmgjaogfceg) &rarr; mcbpblocgmgfnpjjppndjkmgjaogfceg
