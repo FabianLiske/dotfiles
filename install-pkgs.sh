@@ -129,6 +129,7 @@ sudo pacman -Sy \
     thunar \
     thunar-archive-plugin \
     thunar-volman \
+    jq \
     --noconfirm
 
 echo -e "${GREEN}"
