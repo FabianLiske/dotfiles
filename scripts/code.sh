@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euo pipefail
+#set -euo pipefail
 
 # Dependency Check
 for cmd in curl jq code figlet; do
