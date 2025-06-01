@@ -12,6 +12,6 @@ echo -e "${NONE}"
 
 sudo pacman -Sy chromium --noconfirm
 
-sudo mkdir -p /etc/chromium/policies/managed/
+sudo mkdir -p "/etc/chromium/policies/managed/"
 
-sudo cp ./configs/desktop/chromium/extensions.json /etc/chromium/policies/managed/extensions.json
+sudo cp "$HOME/dotfiles/configs/desktop/chromium/extensions.json" "/etc/chromium/policies/managed/extensions.json"

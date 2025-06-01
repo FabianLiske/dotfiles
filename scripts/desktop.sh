@@ -29,7 +29,6 @@ echo -e "${NONE}"
 
 sudo pacman -Sy \
     brightnessctl \
-    chromium \
     hyprland \
     hyprland-qtutils \
     hyprlock \
