@@ -138,11 +138,6 @@ echo -e "${NONE}"
 sudo pacman -Sy \
     chromium \
     code \
-    spotify-launcher \
-    --noconfirm
-
-yay -S \
-    spicetify-cli \
     --noconfirm
 
 # cleanup
