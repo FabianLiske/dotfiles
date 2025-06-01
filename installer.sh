@@ -32,7 +32,7 @@ if [[ "$all" =~ ^[YyJj] ]]; then
     bash "$SCRIPT_DIR/scripts/deploy_utils.sh"
     bash "$SCRIPT_DIR/scripts/chromium.sh"
     bash "$SCRIPT_DIR/scripts/code.sh"
-    bash "$SCRIPT_DIR/scripts/spicetify.sh"
+    #bash "$SCRIPT_DIR/scripts/spicetify.sh"
     echo -e "\nFull Installation done. Reboot."
     exit 0
 fi
@@ -66,7 +66,7 @@ run_step "Install Utils" "scripts/utils.sh"
 run_step "Copy Util Configs" "scripts/deploy_utils.sh"
 run_step "Install Chromium" "scripts/chromium.sh"
 run_step "Install VSCode with Extensions" "scripts/code.sh"
-run_step "Install Spotify & Spicetify" "scripts/spicetify.sh"
+#run_step "Install Spotify & Spicetify" "scripts/spicetify.sh"
 
 # Banner
 echo -e "${GREEN}"
