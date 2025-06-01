@@ -25,7 +25,7 @@ read -p ">> Run all scripts? [y/N] " all
 
 if [[ "$all" =~ ^[YyJj] ]]; then
     echo -e "\nStart Full Installation ..."
-    bash "$SCRIPT_DIR/scripts/required_packages"
+    bash "$SCRIPT_DIR/scripts/required_packages.sh"
     bash "$SCRIPT_DIR/scripts/desktop.sh"
     bash "$SCRIPT_DIR/scripts/deploy_desktop.sh"
     bash "$SCRIPT_DIR/scripts/utils.sh"
@@ -59,12 +59,12 @@ run_step() {
 }
 
 # Beispiel: Einzelne Schritte abfragen
-run_step "Install Required Packages (only skip if not run for the first time)" "scripts/required_packages"
+run_step "Install Required Packages (only skip if not run for the first time)" "scripts/required_packages.sh"
 run_step "Install Desktop" "scripts/desktop.sh"
 run_step "Copy Desktop Configs" "scripts/deploy_desktop.sh"
 run_step "Install Utils" "scripts/utils.sh"
-run_step "Copy Util Configs" "scripts/deploy_utils"
-run_step "Install Chromium" "scripts/chromium"
+run_step "Copy Util Configs" "scripts/deploy_utils.sh"
+run_step "Install Chromium" "scripts/chromium.sh"
 run_step "Install VSCode with Extensions" "scripts/code.sh"
 run_step "Install Spotify & Spicetify" "scripts/spicetify.sh"
 
