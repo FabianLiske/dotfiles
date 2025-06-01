@@ -2,7 +2,7 @@
 #set -euo pipefail
 
 # Dependency Check
-for cmd in curl jq code figlet; do
+for cmd in curl jq figlet; do
     command -v "$cmd" >/dev/null 2>&1 || {
         echo "ERROR: '$cmd' not found. Please install it."; exit 1;
     }
@@ -11,6 +11,13 @@ done
 # Colors
 GREEN='\033[0;32m'
 NONE='\033[0m'
+
+# Banner
+echo -e "${GREEN}"
+figlet "Packages"
+echo -e "${NONE}"
+
+sudo pacman -Sy code --noconfirm
 
 # Banner
 echo -e "${GREEN}"

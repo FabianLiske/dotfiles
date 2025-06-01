@@ -11,8 +11,6 @@ cp -r "$HOME/dotfiles/configs/desktop/wallpaper" "$HOME/.config/"
 cp -r "$HOME/dotfiles/configs/desktop/waybar" "$HOME/.config/"
 cp -r "$HOME/dotfiles/configs/desktop/wofi" "$HOME/.config/"
 cp -r "$HOME/dotfiles/configs/fonts/." "$HOME/.local/share/fonts/"
-cp -r "$HOME/dotfiles/configs/monitoring/btop" "$HOME/.config/"
-cp -r "$HOME/dotfiles/configs/monitoring/fastfetch" "$HOME/.config/"
 cp -r "$HOME/dotfiles/configs/terminal/kitty" "$HOME/.config/"
 
 cp "$HOME/dotfiles/configs/shell/starship.toml" "$HOME/.config/"
