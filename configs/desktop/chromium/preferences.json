@@ -1,0 +1,10 @@
+{
+  "PasswordManagerEnabled": false,
+  "PasswordManagerPasskeysEnabled": false,
+  "RestoreOnStartup": 1,
+  "AutofillAddressEnabled": false,
+  "AutofillCreditCardEnabled": false,
+  "BlockThirdPartyCookies": true,
+  "FeedbackSurveysEnabled": false,
+  "DisableSafeBrowsingProceedAnyway": false
+}
