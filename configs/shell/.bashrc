@@ -17,3 +17,4 @@ export XCURSOR_SIZE=24
 
 # Aliases
 alias dc="cd .."
+alias hyperctl="hyprctl"
