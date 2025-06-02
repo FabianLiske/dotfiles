@@ -17,4 +17,6 @@ NONE='\033[0m'
 sudo pacman -Sy \
     btop \
     fastfetch \
+    tree \
+    unzip \
     --noconfirm

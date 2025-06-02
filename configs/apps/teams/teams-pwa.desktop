@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Microsoft Teams (PWA)
+Exec=chromium --app=https://teams.microsoft.com/v2/
+Icon=msteams
+Type=Application
+Categories=Network;Office;
