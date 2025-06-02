@@ -12,6 +12,7 @@ cp -r "$HOME/dotfiles/configs/desktop/waybar" "$HOME/.config/"
 cp -r "$HOME/dotfiles/configs/desktop/wofi" "$HOME/.config/"
 cp -r "$HOME/dotfiles/configs/fonts/." "$HOME/.local/share/fonts/"
 cp -r "$HOME/dotfiles/configs/terminal/kitty" "$HOME/.config/"
+cp -r "$HOME/dotfiles/configs/desktop/mako" "$HOME/.config/"
 
 cp "$HOME/dotfiles/configs/shell/starship.toml" "$HOME/.config/"
 cp "$HOME/dotfiles/configs/shell/.bashrc" "$HOME/"
