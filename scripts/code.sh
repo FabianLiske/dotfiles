@@ -54,3 +54,11 @@ for EXT in "${EXTENSIONS[@]}"; do
 done
 
 echo "✅ All extensions installed."
+
+# Banner
+echo -e "${GREEN}"
+figlet "Config"
+echo -e "${NONE}"
+
+mkdir -p "$HOME/.config/Code - OSS/User"
+cp "$HOME/dotfiles/configs/apps/vscode/settings.json" "$HOME/.config/Code - OSS/User/settings.json"
