@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Arch Package Repository (PWA)
+Exec=chromium --user-data-dir="$HOME/.config/chromium-archrepo" --app=https://archlinux.org/packages/
+Icon=archlinux
+Type=Application
+Categories=Network;Utility;
