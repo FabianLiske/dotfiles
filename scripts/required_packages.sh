@@ -20,3 +20,7 @@ sudo pacman -Sy \
     figlet \
     wget \
     --noconfirm
+
+yay -S \
+    ungoogled-chromium \
+    --noconfirm
