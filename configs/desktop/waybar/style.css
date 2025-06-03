@@ -51,14 +51,14 @@
 
 #tray {
     margin: 6px 3px;
-    background-color: @mantle;
+    background-color: @blue;
     padding: 6px 12px;
     border-radius: 6px;
     border-width: 0px;
 }
 
 #custom-lock {
-    background-color: @blue;
+    background-color: @sapphire;
     color: @base;
 }
 #custom-reboot {
