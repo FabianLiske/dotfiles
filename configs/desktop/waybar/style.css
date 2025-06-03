@@ -1,32 +1,105 @@
+@import "macchiato.css";
+
 * {
-  font-family: "CaskaydiaCove Nerd Font", "Font Awesome 6 Free", "Font Awesome 6 Free Solid";
-  font-size: 12px;
-  border-radius: 0;
-  min-height: 0;
-  border: none;
-  font-weight: bold;
+    font-family: "CaskaydiaCove Nerd Font", "Font Awesome 6 Free", "Font Awesome 6 Free Solid";
+    font-size: 12px;
+    border-radius: 0;
+    min-height: 0;
+    border: none;
+    font-weight: bold;
 }
 
-#workspaces{
-  background-color: rgba(24,24,37,0.1);
-  border: none;
-  box-shadow: none;
-}
-
-#tray{
-  margin: 6px 3px;
-  background-color: rgba(36, 36, 52, 0.1);
-  padding: 6px 12px; /* 保持内部间距 */
-  border-radius: 6px;
-  border-width: 0px;
-}
+/*----------------------------------------------*/
 
 #waybar {
-  background-color: rgba(24, 24, 37, 0.1);
-  transition-property: background-color;
-  transition-duration: 0.5s;
+    background-color: @surface0;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+}
+#waybar.hidden {
+    opacity: 0.5;
 }
 
+/*----------------------------------------------*/
+
+#workspaces {
+    background-color: @surface1;
+    border: none;
+    box-shadow: none;
+}
+
+#workspaces button {
+    all: initial;
+    min-width: 0;
+    box-shadow: inset 0 -3px transparent;
+    padding: 6px 18px;
+    margin: 6px 3px;
+    border-radius: 4px;
+    background-color: @surface2;
+    color: @text;
+}
+#workspaces button.active {
+    color: @base;
+    background-color: @lavender;
+}
+#workspaces button:hover {
+    color: @base;
+    background-color: @lavender;
+}
+
+/*----------------------------------------------*/
+
+#tray {
+    margin: 6px 3px;
+    background-color: @mantle;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border-width: 0px;
+}
+
+#custom-lock {
+    background-color: @blue;
+    color: @base;
+}
+#custom-reboot {
+    background-color: @teal;
+    color: @base;
+}
+#custom-power {
+    background-color: @green;
+    color: @base;
+}
+#clock {
+    background-color: @yellow;
+    color: @base;
+}
+#window {
+    background-color: @peach;
+    color: @base;
+}
+#network {
+    background-color: @maroon;
+    color: @base;
+}
+#pulseaudio {
+    background-color: @red;
+    color: @base;
+}
+#memory {
+    background-color: @mauve;
+    color: @base;
+}
+#cpu {
+    background-color: @pink;
+    color: @base;
+}
+#custom-temperature {
+    background-color: @flamingo;
+    color: @base;
+}
+
+/*----------------------------------------------*/
+/* Optional: einheitliche Optik für alle Module, die nicht explizit definiert sind */
 #window,
 #clock,
 #custom-power,
@@ -36,93 +109,25 @@
 #memory,
 #cpu,
 #network,
-#custom-lock{
-  border-radius: 4px;
-  margin: 6px 3px;
-  padding: 6px 12px;
-  background-color: #1e1e2e;
-  color: #181825;
+#custom-lock {
+    border-radius: 4px;
+    margin: 6px 3px;
+    padding: 6px 12px;
+    /* kein background-color hier – das kommt oben je Modul */
+    /* color: @base; -> ebenfalls einzeln */
 }
 
-#clock {
-  background-color: #89b4fa;
-}
-#custom-power{
-  background-color: #f38ba8;
-}
-#custom-reboot{
-  background-color: #a6e3a1;
-}
-#bluetooth{
-  background-color: #f9e2af;
-}
-#battery{
-  background-color: #cba6f7;
-}
-#pulseaudio{
-  background-color: #89dceb;
-}
-#backlight{
-  background-color: #a6a3a1;
-}
-#custom-temperature{
-  background-color: #74c7ec;
-}
-#memory{
-  background-color: #f7768e;
-}
-#cpu{
-  background-color: #f38ba8;
-}
-#network{
-  background-color: #fab387;
-}
-#custom-lock{
-  background-color: #94e2d5;
-}
-#window{
-  background-color: #74c7ec;
-}
-
-#waybar.hidden {
-  opacity: 0.5;
-}
-
-#workspaces button {
-  all: initial;
-  /* Remove GTK theme values (waybar #1351) */
-  min-width: 0;
-  /* Fix weird spacing in materia (waybar #450) */
-  box-shadow: inset 0 -3px transparent;
-  /* Use box-shadow instead of border so the text isn't offset */
-  padding: 6px 18px;
-  margin: 6px 3px;
-  border-radius: 4px;
-  background-color: rgba(36, 36, 52, 1.0);
-  color: #cdd6f4;
-}
-
-#workspaces button.active {
-  color: #1e1e2e;
-  background-color: #cdd6f4;
-}
-
-#workspaces button:hover {
-  box-shadow: inherit;
-  text-shadow: inherit;
-  color: #1e1e2e;
-  background-color: #cdd6f4;
-}
+/*----------------------------------------------*/
 
 tooltip {
-  border-radius: 8px;
-  padding: 16px;
-  background-color: #131822;
-  color: #C0C0C0;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: @crust;
+    color: @text;
 }
 
 tooltip label {
-  padding: 5px;
-  background-color: #131822;
-  color: #C0C0C0;
+    padding: 5px;
+    background-color: @crust;
+    color: @text;
 }
