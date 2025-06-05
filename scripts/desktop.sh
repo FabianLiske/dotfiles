@@ -37,6 +37,7 @@ sudo pacman -Sy \
     kitty \
     libnotify \
     mako \
+    mpv \
     networkmanager \
     network-manager-applet \
     pavucontrol \

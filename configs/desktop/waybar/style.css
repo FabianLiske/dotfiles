@@ -23,7 +23,7 @@
 /*----------------------------------------------*/
 
 #workspaces {
-    background-color: @surface1;
+    background-color: @surface0;
     border: none;
     box-shadow: none;
 }

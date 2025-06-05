@@ -19,4 +19,6 @@ sudo pacman -Sy \
     fastfetch \
     tree \
     unzip \
+    obs-studio \
+    discord \
     --noconfirm
