@@ -77,6 +77,10 @@
     background-color: @peach;
     color: @base;
 }
+#custom-spotify {
+    background-color: @peach;
+    color: @base;
+}
 #network {
     background-color: @maroon;
     color: @base;
@@ -106,6 +110,7 @@
 #custom-reboot,
 #pulseaudio,
 #custom-temperature,
+#custom-spotify,
 #memory,
 #cpu,
 #network,

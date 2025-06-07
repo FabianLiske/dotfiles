@@ -12,6 +12,7 @@
     "custom/power",
     "clock"
   ],
+  "modules-right": ["custom/spotify"],
   "hyprland/workspaces": {
     "disable-scroll": false,
     "all-outputs": true,
@@ -83,6 +84,11 @@
     "interval": 5,
     "tooltip": true,
     "tooltip-format": "CPU Temp: {}°C"
+  },
+  "custom/spotify": {
+    "exec": "/usr/bin/python3 /home/$USER/.config/waybar/mediaplayer.py --player spotify",
+    "format": "{} ",
+    "return-type": "json"
   },
   "memory": {
     "format": "  {used:0.1f}G/{total:0.1f}G ",
