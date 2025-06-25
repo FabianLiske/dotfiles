@@ -28,6 +28,7 @@ echo -e "${NONE}"
 EXTENSIONS=(
     "Catppuccin/catppuccin-vsc-icons"
     "Catppuccin/catppuccin-vsc"
+    "ms-azuretools/vscode-docker"
 )
 
 NUM_EXTENSIONS=${#EXTENSIONS[@]}
