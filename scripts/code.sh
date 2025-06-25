@@ -1,65 +1,60 @@
 #!/bin/bash
-#set -euo pipefail
+set -euo pipefail
 
-# Dependency Check
-for cmd in curl jq figlet; do
-    command -v "$cmd" >/dev/null 2>&1 || {
-        echo "ERROR: '$cmd' not found. Please install it."; exit 1;
-    }
+# Dependency check
+for cmd in curl jq figlet yay; do
+  command -v "$cmd" >/dev/null 2>&1 || {
+    echo "ERROR: '$cmd' not found. Please install it first."; exit 1;
+  }
 done
 
 # Colors
 GREEN='\033[0;32m'
 NONE='\033[0m'
 
-# Banner
+# Banner: Packages
 echo -e "${GREEN}"
 figlet "Packages"
 echo -e "${NONE}"
 
-sudo pacman -Sy code --noconfirm
+# Base packages for building AUR packages
+sudo pacman -Sy --noconfirm --needed base-devel git
 
-# Banner
+# Install proprietary VS Code from AUR
+yay -Sy --noconfirm --needed visual-studio-code-bin
+
+# Banner: Code Extensions
 echo -e "${GREEN}"
 figlet "Code Extensions"
 echo -e "${NONE}"
 
-# Extensions to install
+# Extensions to install (Marketplace IDs)
 EXTENSIONS=(
-    "Catppuccin/catppuccin-vsc-icons"
-    "Catppuccin/catppuccin-vsc"
-    "ms-azuretools/vscode-docker"
+  "catppuccin.catppuccin-vsc-icons"
+  "catppuccin.catppuccin-vsc"
+  "ms-azuretools.vscode-docker"
+  "ms-vscode-remote.remote-containers"
 )
 
-NUM_EXTENSIONS=${#EXTENSIONS[@]}
+NUM_EXT=${#EXTENSIONS[@]}
 COUNT=0
 
 for EXT in "${EXTENSIONS[@]}"; do
-    ((COUNT++))
-    echo "Installing Extension $COUNT/$NUM_EXTENSIONS: $EXT"
-    
-    # Get Extensions info
-    API_URL="https://open-vsx.org/api/${EXT}/latest"
-    JSON=$(curl -s "$API_URL")
-    
-    # Get download url for latest version
-    DOWNLOAD_URL=$(jq -r ".files.download" <<< "$JSON")
-    
-    # Replace / with - in Filename
-    SANITIZED_EXT="${EXT//\//-}"
-    
-    # Download and install extension
-    curl -L --fail -o "/tmp/$SANITIZED_EXT.vsix" "$DOWNLOAD_URL"
-    code --install-extension "/tmp/$SANITIZED_EXT.vsix" --force
-    
+  ((COUNT++))
+  echo "Installing extension $COUNT/$NUM_EXT: $EXT"
+  code --install-extension "$EXT" --force
 done
 
 echo "✅ All extensions installed."
 
-# Banner
+# Banner: Config
 echo -e "${GREEN}"
 figlet "Config"
 echo -e "${NONE}"
 
-mkdir -p "$HOME/.config/Code - OSS/User"
-cp "$HOME/dotfiles/configs/apps/vscode/settings.json" "$HOME/.config/Code - OSS/User/settings.json"
+# Copy user settings
+TARGET_DIR="$HOME/.config/Code/User"
+mkdir -p "$TARGET_DIR"
+cp "$HOME/dotfiles/configs/apps/vscode/settings.json" "$TARGET_DIR/settings.json"
+
+echo "🎉 Done — enjoy coding with VS Code!"
