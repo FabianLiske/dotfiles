@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -euo pipefail
 
-# Dependency check
+# Dependencies: curl, jq, figlet, yay
 for cmd in curl jq figlet yay; do
   command -v "$cmd" >/dev/null 2>&1 || {
     echo "ERROR: '$cmd' not found. Please install it first."; exit 1;
@@ -9,26 +9,31 @@ for cmd in curl jq figlet yay; do
 done
 
 # Colors
-GREEN='\033[0;32m'
-NONE='\033[0m'
+GREEN='\033[0;32m'; NONE='\033[0m'
+info(){ echo -e "${GREEN}→${NONE} $*"; }
 
-# Banner: Packages
-echo -e "${GREEN}"
+#–– Install base packages ––
+info "Packages"
 figlet "Packages"
-echo -e "${NONE}"
-
-# Base packages for building AUR packages
+info "Installing base-devel & git…"
 sudo pacman -Sy --noconfirm --needed base-devel git
 
-# Install proprietary VS Code from AUR
+#–– Install VS Code ––
+info "VS Code"
+figlet "VS Code"
+info "Installing proprietary VS Code…"
 yay -Sy --noconfirm --needed visual-studio-code-bin
 
-# Banner: Code Extensions
-echo -e "${GREEN}"
-figlet "Code Extensions"
-echo -e "${NONE}"
+# Refresh shell so `code` is immediately available
+hash -r
 
-# Extensions to install (Marketplace IDs)
+# Verify `code` CLI
+if ! command -v code >/dev/null 2>&1; then
+  echo "ERROR: 'code' CLI not found after installation." >&2
+  exit 1
+fi
+
+#–– Extensions ––
 EXTENSIONS=(
   "catppuccin.catppuccin-vsc-icons"
   "catppuccin.catppuccin-vsc"
@@ -36,25 +41,21 @@ EXTENSIONS=(
   "ms-vscode-remote.remote-containers"
 )
 
-NUM_EXT=${#EXTENSIONS[@]}
+info "Extensions"
+figlet "Extensions"
 COUNT=0
-
 for EXT in "${EXTENSIONS[@]}"; do
-  ((COUNT++))
-  echo "Installing extension $COUNT/$NUM_EXT: $EXT"
-  code --install-extension "$EXT" --force
+  COUNT=$((COUNT+1))
+  info "Installing [$COUNT/${#EXTENSIONS[@]}]: $EXT"
+  code --install-extension "$EXT" --force \
+    || echo "WARNING: failed to install $EXT"
 done
 
-echo "✅ All extensions installed."
-
-# Banner: Config
-echo -e "${GREEN}"
+#–– Copy user settings ––
+info "Config"
 figlet "Config"
-echo -e "${NONE}"
-
-# Copy user settings
 TARGET_DIR="$HOME/.config/Code/User"
 mkdir -p "$TARGET_DIR"
 cp "$HOME/dotfiles/configs/apps/vscode/settings.json" "$TARGET_DIR/settings.json"
 
-echo "🎉 Done — enjoy coding with VS Code!"
+info "Done."  
