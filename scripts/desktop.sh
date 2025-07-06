@@ -35,6 +35,7 @@ sudo pacman -Sy \
     hypridle \
     hyprpaper \
     hyprshot \
+    gthumb \
     kitty \
     libnotify \
     mako \
