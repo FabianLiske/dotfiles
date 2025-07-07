@@ -39,6 +39,7 @@ EXTENSIONS=(
   "catppuccin.catppuccin-vsc"
   "ms-azuretools.vscode-docker"
   "ms-vscode-remote.remote-containers"
+  "tomoki1207.pdf"
 )
 
 info "Extensions"
