@@ -1,13 +1,5 @@
-Config Files:
+# My dotfiles
+Just my configs and soe installation scripts.
 
-- [X] btop
-- [X] fastfetch
-- [X] hypr
-- [X] kitty
-- [X] waybar
-- [X] wofi
-
-Scripts:
-
-- [ ] Package Installer
-- [ ] Config Installer
+## To Do
+- [ ] Write decent README
