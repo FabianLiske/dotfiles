@@ -1,5 +1,5 @@
 # My dotfiles
-Just my configs and soe installation scripts.
+Just my configs and some installation scripts.
 
 ## To Do
 - [ ] Write decent README
