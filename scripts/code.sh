@@ -1,64 +1,62 @@
-#!/bin/bash
-#set -euo pipefail
+#!/usr/bin/env bash
+set -euo pipefail
 
-# Dependency Check
-for cmd in curl jq figlet; do
-    command -v "$cmd" >/dev/null 2>&1 || {
-        echo "ERROR: '$cmd' not found. Please install it."; exit 1;
-    }
+# Dependencies: curl, jq, figlet, yay
+for cmd in curl jq figlet yay; do
+  command -v "$cmd" >/dev/null 2>&1 || {
+    echo "ERROR: '$cmd' not found. Please install it first."; exit 1;
+  }
 done
 
 # Colors
-GREEN='\033[0;32m'
-NONE='\033[0m'
+GREEN='\033[0;32m'; NONE='\033[0m'
+info(){ echo -e "${GREEN}→${NONE} $*"; }
 
-# Banner
-echo -e "${GREEN}"
+#–– Install base packages ––
+info "Packages"
 figlet "Packages"
-echo -e "${NONE}"
+info "Installing base-devel & git…"
+sudo pacman -Sy --noconfirm --needed base-devel git
 
-sudo pacman -Sy code --noconfirm
+#–– Install VS Code ––
+info "VS Code"
+figlet "VS Code"
+info "Installing proprietary VS Code…"
+yay -Sy --noconfirm --needed visual-studio-code-bin
 
-# Banner
-echo -e "${GREEN}"
-figlet "Code Extensions"
-echo -e "${NONE}"
+# Refresh shell so `code` is immediately available
+hash -r
 
-# Extensions to install
+# Verify `code` CLI
+if ! command -v code >/dev/null 2>&1; then
+  echo "ERROR: 'code' CLI not found after installation." >&2
+  exit 1
+fi
+
+#–– Extensions ––
 EXTENSIONS=(
-    "Catppuccin/catppuccin-vsc-icons"
-    "Catppuccin/catppuccin-vsc"
+  "catppuccin.catppuccin-vsc-icons"
+  "catppuccin.catppuccin-vsc"
+  "ms-azuretools.vscode-docker"
+  "ms-vscode-remote.remote-containers"
+  "tomoki1207.pdf"
 )
 
-NUM_EXTENSIONS=${#EXTENSIONS[@]}
+info "Extensions"
+figlet "Extensions"
 COUNT=0
-
 for EXT in "${EXTENSIONS[@]}"; do
-    ((COUNT++))
-    echo "Installing Extension $COUNT/$NUM_EXTENSIONS: $EXT"
-    
-    # Get Extensions info
-    API_URL="https://open-vsx.org/api/${EXT}/latest"
-    JSON=$(curl -s "$API_URL")
-    
-    # Get download url for latest version
-    DOWNLOAD_URL=$(jq -r ".files.download" <<< "$JSON")
-    
-    # Replace / with - in Filename
-    SANITIZED_EXT="${EXT//\//-}"
-    
-    # Download and install extension
-    curl -L --fail -o "/tmp/$SANITIZED_EXT.vsix" "$DOWNLOAD_URL"
-    code --install-extension "/tmp/$SANITIZED_EXT.vsix" --force
-    
+  COUNT=$((COUNT+1))
+  info "Installing [$COUNT/${#EXTENSIONS[@]}]: $EXT"
+  code --install-extension "$EXT" --force \
+    || echo "WARNING: failed to install $EXT"
 done
 
-echo "✅ All extensions installed."
-
-# Banner
-echo -e "${GREEN}"
+#–– Copy user settings ––
+info "Config"
 figlet "Config"
-echo -e "${NONE}"
+TARGET_DIR="$HOME/.config/Code/User"
+mkdir -p "$TARGET_DIR"
+cp "$HOME/dotfiles/configs/apps/vscode/settings.json" "$TARGET_DIR/settings.json"
 
-mkdir -p "$HOME/.config/Code - OSS/User"
-cp "$HOME/dotfiles/configs/apps/vscode/settings.json" "$HOME/.config/Code - OSS/User/settings.json"
+info "Done."  
