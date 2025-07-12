@@ -14,9 +14,15 @@ clear
 GREEN='\033[0;32m'
 NONE='\033[0m'
 
+echo -e "${GREEN}"
+figlet "Misc Apps"
+echo -e "${NONE}"
+
 sudo pacman -Sy \
-    btop \
-    fastfetch \
-    tree \
-    unzip \
+    discord \
+    obs-studio \
     --noconfirm
+
+#yay -S \
+#    spicetify-cli \
+#    --noconfirm

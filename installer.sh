@@ -36,6 +36,7 @@ if [[ "$all" =~ ^[YyJj] ]]; then
     #bash "$SCRIPT_DIR/scripts/work.sh"
     bash "$SCRIPT_DIR/scripts/spicetify.sh"
     bash "$SCRIPT_DIR/scripts/pwa.sh"
+    bash "$SCRIPT_DIR/scripts/misc_apps.sh"
     echo -e "\nFull Installation done. Reboot."
     exit 0
 fi
@@ -73,6 +74,7 @@ run_step "Install Dev Tools" "scripts/dev_tools.sh"
 #run_step "Install Work related Apps" "scripts/work.sh"
 run_step "Install Spotify & Spicetify" "scripts/spicetify.sh"
 run_step "Install PWAs" "scripts/pwa.sh"
+run_step "Install miscellaneous apps" "scripts/misc_apps.sh"
 
 # Banner
 echo -e "${GREEN}"
