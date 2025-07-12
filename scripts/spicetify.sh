@@ -29,4 +29,9 @@ git clone https://github.com/spicetify/spicetify-themes.git /tmp/spicetify-theme
 
 cp -r "/tmp/spicetify-themes/"* "$HOME/.config/spicetify/Themes/"
 
-#spicetify backup apply
+echo -e "${GREEN}"
+figlet "Attention!"
+echo -e "${NONE}"
+echo "Run Spotify once, then 'spicetify backup apply' after installation script finished."
+
+read -n 1 -r -p "Press ENTER to continue..."
