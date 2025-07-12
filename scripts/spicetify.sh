@@ -29,4 +29,4 @@ git clone https://github.com/spicetify/spicetify-themes.git /tmp/spicetify-theme
 
 cp -r "/tmp/spicetify-themes/"* "$HOME/.config/spicetify/Themes/"
 
-spicetify backup apply
+#spicetify backup apply
