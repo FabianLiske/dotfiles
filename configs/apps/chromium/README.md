@@ -1,5 +1,5 @@
 # Chrome Extensions
-In order to automatically install extensions and apply some settings the [Chromium setup script](/scripts/chromium.sh) uses [managed policies](https://chromium.googlesource.com/chromium/src/+/HEAD/docs/enterprise/policies.md). These are the extensions the script installs in a way humans know what's going on. The actual list used by the script is [this one](/configs/desktop/chromium/extensions.json).
+In order to automatically install extensions and apply some settings the [Chromium setup script](/scripts/chromium.sh) uses [managed policies](https://chromium.googlesource.com/chromium/src/+/HEAD/docs/enterprise/policies.md). These are the extensions the script installs in a way humans know what's going on. The actual list used by the script is [this one](/configs/apps/chromium/extensions.json).
 
 | Extension | Description | ID |
 | --- | --- | --- |
