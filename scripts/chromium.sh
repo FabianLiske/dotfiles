@@ -14,5 +14,5 @@ sudo pacman -Sy chromium --noconfirm
 
 sudo mkdir -p "/etc/chromium/policies/managed/"
 
-sudo cp "$HOME/dotfiles/configs/desktop/chromium/extensions.json" "/etc/chromium/policies/managed/extensions.json"
-sudo cp "$HOME/dotfiles/configs/desktop/chromium/preferences.json" "/etc/chromium/policies/managed/preferences.json"
+sudo cp "$HOME/dotfiles/configs/apps/chromium/extensions.json" "/etc/chromium/policies/managed/extensions.json"
+sudo cp "$HOME/dotfiles/configs/apps/chromium/preferences.json" "/etc/chromium/policies/managed/preferences.json"
