@@ -24,6 +24,7 @@ echo -e "${NONE}"
 
 sudo pacman -Sy \
     docker \
+    docker-compose \
     --noconfirm
 
 #yay -S \
