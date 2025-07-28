@@ -15,6 +15,7 @@ GREEN='\033[0;32m'
 NONE='\033[0m'
 
 sudo pacman -Sy \
+    age \
     curl \
     jq \
     figlet \
