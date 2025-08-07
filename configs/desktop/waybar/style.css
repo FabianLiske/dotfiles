@@ -12,7 +12,7 @@
 /*----------------------------------------------*/
 
 #waybar {
-    background-color: @surface0;
+    background-color: transparent;
     transition-property: background-color;
     transition-duration: 0.5s;
 }
