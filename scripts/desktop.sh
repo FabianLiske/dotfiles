@@ -70,6 +70,9 @@ yay -S \
 sudo systemctl enable NetworkManager
 sudo systemctl enable sddm
 
+# Improve stability for USB audio interfaces such as Focusrite Scarlett
+echo "options snd_usb_audio nrpacks=1" | sudo tee /etc/modprobe.d/scarlett.conf >/dev/null
+
 # cleanup
 echo -e "${GREEN}"
 figlet "Cleanup"
