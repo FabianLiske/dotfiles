@@ -9,6 +9,7 @@
   ],
   "modules-right": [
     "network",
+    "custom/netq",
     "pulseaudio",
     "memory",
     "cpu"
@@ -19,6 +20,11 @@
     "format-linked": " 󱘖 {ifname} (No IP) ",
     "format-disconnected": "  Disconnected ",
     "interval": 1
+  },
+  "custom/netq": {
+    "interval": 5,
+    "exec": "bash -c 'out=$(ping -c1 -W1 1.1.1.1 2>/dev/null); if [ $? -eq 0 ]; then echo \"󰓅 $(echo \"$out\" | grep -oP \"time=\\K[0-9.]+\") ms\"; else echo \"󰖪 offline\"; fi'",
+    "tooltip": false
   },
   "pulseaudio": {
     "format": "{icon}{volume}% ",

@@ -85,6 +85,10 @@
     background-color: @maroon;
     color: @base;
 }
+#custom-netq {
+    background-color: @maroon;
+    color: @base;
+}
 #pulseaudio {
     background-color: @red;
     color: @base;
@@ -109,6 +113,7 @@
 #memory,
 #cpu,
 #network,
+#custom-netq,
 #custom-lock {
     border-radius: 4px;
     margin: 6px 3px;
