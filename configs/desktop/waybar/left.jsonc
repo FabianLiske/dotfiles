@@ -12,7 +12,9 @@
     "custom/power",
     "clock"
   ],
-  "modules-right": ["custom/spotify"],
+  "modules-right": [
+    "custom/spotify"
+  ],
   "hyprland/workspaces": {
     "disable-scroll": false,
     "all-outputs": true,
@@ -33,11 +35,15 @@
     "active": "󱓻"
     }
   },
+  "tray": {
+    "icon-size": 12,
+    "spacing": 6
+  },
   "custom/lock": {
-  "format": "  ",
-  "on-click": "hyprlock",
-  "tooltip": true,
-  "tooltip-format": "Lock"
+    "format": "  ",
+    "on-click": "hyprlock",
+    "tooltip": true,
+    "tooltip-format": "Lock"
   },
   "custom/reboot": {
     "format": "  ",
@@ -51,55 +57,6 @@
     "tooltip": true,
     "tooltip-format": "Shutdown"
   },
-  "network": {
-    "format-ethernet": " Wired ",
-    "tooltip-format": "<span color='#FF1493'> 󰅧 </span>{bandwidthUpBytes}  <span color='#00BFFF'> 󰅢 </span>{bandwidthDownBytes}",
-    "format-linked": " 󱘖 {ifname} (No IP) ",
-    "format-disconnected": "  Disconnected ",
-    "interval": 1
-  },
-  "pulseaudio": {
-    "format": "{icon}{volume}% ",
-    "format-muted": " 󰖁 0% ",
-    "format-icons": {
-      "headphone": "  ",
-      "hands-free": "  ",
-      "headset": "  ",
-      "phone": "  ",
-      "portable": "  ",
-      "car": "  ",
-      "default": [
-        "  ",
-        "  ",
-        "  "
-      ]
-    },
-    "on-click-right": "pavucontrol -t 3",
-    "on-click": "pactl -- set-sink-mute 0 toggle",
-    "tooltip": true,
-    "tooltip-format": "Volume: {volume}%"
-  },
-  "custom/temperature": {
-    "exec": "sensors | awk '/Tctl:/ { gsub(/[^0-9.]/, \"\", $2); printf(\"%d\\n\", $2); exit }'",
-    "format": " {}°C ",
-    "interval": 5,
-    "tooltip": true,
-    "tooltip-format": "CPU Temp: {}°C"
-  },
-  "custom/spotify": {
-    "exec": "/usr/bin/python3 /home/$USER/.config/waybar/mediaplayer.py --player spotify",
-    "format": "{} ",
-    "return-type": "json"
-  },
-  "memory": {
-    "format": "  {used:0.1f}G/{total:0.1f}G ",
-    "tooltip": true,
-    "tooltip-format": "RAM Usage: {used:0.2f}G/{total:0.2f}G"
-  },
-  "cpu": {
-    "format": "  {usage}% ",
-    "tooltip": true
-  },
   "clock": {
     "interval": 1,
     "timezone": "Europe/Berlin",
@@ -107,8 +64,9 @@
     "tooltip": true,
     "tooltip-format": "{:L%d.%m.%Y, %A}"
   },
-  "tray": {
-    "icon-size": 12,
-    "spacing": 6
+  "custom/spotify": {
+    "exec": "/usr/bin/python3 /home/$USER/.config/waybar/mediaplayer.py --player spotify",
+    "format": "{} ",
+    "return-type": "json"
   }
 }

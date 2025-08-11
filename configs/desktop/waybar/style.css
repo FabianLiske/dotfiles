@@ -97,10 +97,6 @@
     background-color: @pink;
     color: @base;
 }
-#custom-temperature {
-    background-color: @flamingo;
-    color: @base;
-}
 
 /*----------------------------------------------*/
 /* Optional: einheitliche Optik für alle Module, die nicht explizit definiert sind */
@@ -109,7 +105,6 @@
 #custom-power,
 #custom-reboot,
 #pulseaudio,
-#custom-temperature,
 #custom-spotify,
 #memory,
 #cpu,
