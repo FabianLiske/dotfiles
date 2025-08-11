@@ -8,6 +8,8 @@
     "hyprland/window"
   ],
   "modules-right": [
+    "custom/units",
+    "custom/updates",
     "network",
     "custom/netq",
     "pulseaudio",
@@ -15,32 +17,44 @@
     "cpu",
     "disk"
   ],
+  "custom/updates": {
+    "interval": 1800,
+    "exec": "bash -lc 'echo 󰚰 $(checkupdates 2>/dev/null | wc -l)'",
+    "on-click": "kitty -e bash -lc \"sudo pacman -Syu; read -n1\"",
+    "tooltip": false
+  },
+  "custom/units": {
+    "interval": 15,
+    "exec": "bash -lc 'echo  $(systemctl --failed --no-legend | wc -l)'",
+    "on-click": "kitty -e bash -lc 'systemctl --failed; read -n1'",
+    "tooltip": false
+  },
   "network": {
-    "format-ethernet": " Wired ",
-    "tooltip-format": "<span color='#FF1493'> 󰅧 </span>{bandwidthUpBytes}  <span color='#00BFFF'> 󰅢 </span>{bandwidthDownBytes}",
-    "format-linked": " 󱘖 {ifname} (No IP) ",
-    "format-disconnected": "  Disconnected ",
-    "interval": 1
+    "format-ethernet": "󰜮{bandwidthDownBits:>6}|󰜷{bandwidthUpBits:>6}",
+    "format-linked": "󱘖 {ifname} (No IP)",
+    "format-disconnected": " Disconnected",
+    "interval": 1,
+    "tooltip": false
   },
   "custom/netq": {
     "interval": 5,
-    "exec": "bash -c 'out=$(ping -c1 -W1 1.1.1.1 2>/dev/null); if [ $? -eq 0 ]; then echo \"󰓅 $(echo \"$out\" | grep -oP \"time=\\K[0-9.]+\") ms\"; else echo \"󰖪 offline\"; fi'",
+    "exec": "bash -c 'out=$(ping -c1 -W1 1.1.1.1 2>/dev/null); if [ $? -eq 0 ]; then echo \"󰓅 $(echo \"$out\" | grep -oP \"time=\\K[0-9.]+\" | cut -d. -f1) ms\"; else echo \"󰖪 offline\"; fi'",
     "tooltip": false
   },
   "pulseaudio": {
-    "format": "{icon}{volume}% ",
-    "format-muted": " 󰖁 0% ",
+    "format": "{icon} {volume}%",
+    "format-muted": "󰖁 0%",
     "format-icons": {
-      "headphone": "  ",
-      "hands-free": "  ",
-      "headset": "  ",
-      "phone": "  ",
-      "portable": "  ",
-      "car": "  ",
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
       "default": [
-        "   ",
-        "   ",
-        "   "
+        " ",
+        " ",
+        " "
       ]
     },
     "on-click-right": "pavucontrol -t 3",
@@ -49,16 +63,16 @@
     "tooltip-format": "Volume: {volume}%"
   },
   "memory": {
-    "format": "  {used:0.1f}G/{total:0.1f}G ",
+    "format": " {percentage}%",
     "tooltip": true,
-    "tooltip-format": "RAM Usage: {used:0.2f}G/{total:0.2f}G"
+    "tooltip-format": "RAM Usage: {used:0.2f}GB/{total:0.2f}GB"
   },
   "cpu": {
-    "format": "  {usage}% ",
+    "format": " {usage}%",
     "tooltip": true
   },
   "disk": {
-    "format": " {percentage_used}%",
+    "format": " {percentage_used}%",
     "path": "/",
     "interval": 30
   }

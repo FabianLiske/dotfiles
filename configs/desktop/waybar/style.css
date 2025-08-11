@@ -73,16 +73,24 @@
     background-color: @yellow;
     color: @base;
 }
-#window {
-    background-color: @peach;
-    color: @base;
-}
 #custom-spotify {
     background-color: @peach;
     color: @base;
 }
-#network {
+#window {
+    background-color: @peach;
+    color: @base;
+}
+#custom-units {
     background-color: @maroon;
+    color: @base;
+}
+#custom-updates {
+    background-color: @maroon;
+    color: @base;
+}
+#network {
+    background-color: @red;
     color: @base;
 }
 #custom-netq {
@@ -108,18 +116,21 @@
 
 /*----------------------------------------------*/
 /* Optional: einheitliche Optik für alle Module, die nicht explizit definiert sind */
-#window,
+
 #clock,
+#cpu,
+#disk,
+#memory,
+#network,
+#pulseaudio,
+#window,
+#custom-lock,
+#custom-netq,
 #custom-power,
 #custom-reboot,
-#pulseaudio,
 #custom-spotify,
-#memory,
-#cpu,
-#network,
-#custom-netq,
-#custom-lock,
-#disk {
+#custom-units,
+#custom-updates {
     border-radius: 4px;
     margin: 6px 3px;
     padding: 6px 12px;
