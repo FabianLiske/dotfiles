@@ -51,14 +51,14 @@
 
 #tray {
     margin: 6px 3px;
-    background-color: @blue;
+    background-color: @sapphire;
     padding: 6px 12px;
     border-radius: 6px;
     border-width: 0px;
 }
 
 #custom-lock {
-    background-color: @sapphire;
+    background-color: @sky;
     color: @base;
 }
 #custom-reboot {
@@ -86,19 +86,23 @@
     color: @base;
 }
 #custom-netq {
-    background-color: @maroon;
-    color: @base;
-}
-#pulseaudio {
     background-color: @red;
     color: @base;
 }
-#memory {
+#pulseaudio {
     background-color: @mauve;
     color: @base;
 }
-#cpu {
+#memory {
     background-color: @pink;
+    color: @base;
+}
+#cpu {
+    background-color: @flamingo;
+    color: @base;
+}
+#disk {
+    background-color: @rosewater;
     color: @base;
 }
 
@@ -114,7 +118,8 @@
 #cpu,
 #network,
 #custom-netq,
-#custom-lock {
+#custom-lock,
+#disk {
     border-radius: 4px;
     margin: 6px 3px;
     padding: 6px 12px;

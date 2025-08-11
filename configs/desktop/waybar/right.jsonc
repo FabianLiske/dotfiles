@@ -12,7 +12,8 @@
     "custom/netq",
     "pulseaudio",
     "memory",
-    "cpu"
+    "cpu",
+    "disk"
   ],
   "network": {
     "format-ethernet": " Wired ",
@@ -55,5 +56,10 @@
   "cpu": {
     "format": "  {usage}% ",
     "tooltip": true
+  },
+  "disk": {
+    "format": " {percentage_used}%",
+    "path": "/",
+    "interval": 30
   }
 }
