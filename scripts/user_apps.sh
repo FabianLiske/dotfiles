@@ -18,11 +18,11 @@ echo -e "${GREEN}"
 figlet "Misc Apps"
 echo -e "${NONE}"
 
-sudo pacman -Sy \
-    discord \
-    obs-studio \
-    --noconfirm
+PKG_FILE="$HOME/dotfiles/packages/user_apps.txt"
+mapfile -t PKGS < <(grep -Ev '^\s*#' "$PKG_FILE")
+sudo pacman -Sy "${PKGS[@]}" --noconfirm
 
 #yay -S \
 #    spicetify-cli \
 #    --noconfirm
+

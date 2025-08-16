@@ -22,10 +22,9 @@ echo -e "${GREEN}"
 figlet "Dev Tooling"
 echo -e "${NONE}"
 
-sudo pacman -Sy \
-    docker \
-    docker-compose \
-    --noconfirm
+PKG_FILE="$HOME/dotfiles/packages/dev_tools.txt"
+mapfile -t PKGS < <(grep -Ev '^\s*#' "$PKG_FILE")
+sudo pacman -Sy "${PKGS[@]}" --noconfirm
 
 #yay -S \
 #    --noconfirm
@@ -43,3 +42,4 @@ yay -Sc --noconfirm
 echo -e "${GREEN}"
 figlet "Done"
 echo -e "${NONE}"
+
