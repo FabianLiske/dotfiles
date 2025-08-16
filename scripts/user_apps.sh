@@ -18,7 +18,7 @@ echo -e "${GREEN}"
 figlet "Misc Apps"
 echo -e "${NONE}"
 
-PKG_FILE="$HOME/dotfiles/packages/user_apps.txt"
+PKG_FILE="$HOME/dotfiles/packages/user_apps/user_apps-pacman.txt"
 mapfile -t PKGS < <(grep -Ev '^\s*#' "$PKG_FILE")
 sudo pacman -Sy "${PKGS[@]}" --noconfirm
 

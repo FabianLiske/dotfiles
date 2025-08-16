@@ -25,11 +25,11 @@ echo -e "${GREEN}"
 figlet "Hyprland"
 echo -e "${NONE}"
 
-PKG_FILE="$HOME/dotfiles/packages/desktop-pacman.txt"
+PKG_FILE="$HOME/dotfiles/packages/desktop/desktop-pacman.txt"
 mapfile -t PKGS < <(grep -Ev '^\s*#' "$PKG_FILE")
 sudo pacman -Sy "${PKGS[@]}" --noconfirm
 
-AUR_FILE="$HOME/dotfiles/packages/desktop-yay.txt"
+AUR_FILE="$HOME/dotfiles/packages/desktop/desktop-yay.txt"
 mapfile -t AUR_PKGS < <(grep -Ev '^\s*#' "$AUR_FILE")
 yay -S "${AUR_PKGS[@]}" --noconfirm
 

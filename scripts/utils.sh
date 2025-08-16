@@ -14,7 +14,7 @@ clear
 GREEN='\033[0;32m'
 NONE='\033[0m'
 
-PKG_FILE="$HOME/dotfiles/packages/utils.txt"
+PKG_FILE="$HOME/dotfiles/packages/utils/utils-pacman.txt"
 mapfile -t PKGS < <(grep -Ev '^\s*#' "$PKG_FILE")
 sudo pacman -Sy "${PKGS[@]}" --noconfirm
 

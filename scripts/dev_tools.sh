@@ -28,11 +28,11 @@ echo -e "${GREEN}"
 figlet "Dev Tooling"
 echo -e "${NONE}"
 
-PKG_FILE="$HOME/dotfiles/packages/dev_tools.txt"
+PKG_FILE="$HOME/dotfiles/packages/dev_tools/dev_tools-pacman.txt"
 mapfile -t PKGS < <(grep -Ev '^\s*#' "$PKG_FILE")
 sudo pacman -Sy --noconfirm --needed "${PKGS[@]}"
 
-AUR_FILE="$HOME/dotfiles/packages/dev_tools-yay.txt"
+AUR_FILE="$HOME/dotfiles/packages/dev_tools/dev_tools-yay.txt"
 if [[ -f "$AUR_FILE" ]]; then
   mapfile -t AUR_PKGS < <(grep -Ev '^\s*#' "$AUR_FILE")
   yay -Sy --noconfirm --needed "${AUR_PKGS[@]}"

@@ -15,4 +15,4 @@
 | [work.sh](/scripts/work.sh) | Currently unused |
 
 ## To Do
-- [ ] Move application lists to separate files for easier maintenance?
+- [x] Move application lists to separate files for easier maintenance
