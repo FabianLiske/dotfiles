@@ -1,0 +1,2 @@
+# AUR developer tools
+visual-studio-code-bin
