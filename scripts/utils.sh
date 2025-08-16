@@ -19,4 +19,5 @@ sudo pacman -Sy \
     fastfetch \
     tree \
     unzip \
+    zoxide \
     --noconfirm
