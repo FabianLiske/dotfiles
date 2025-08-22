@@ -10,6 +10,9 @@ echo -e "${GREEN}"
 figlet "Yubikey"
 echo -e "${NONE}"
 
+mkdir -p "$HOME/.ssh"
+chmod 700 "$HOME/.ssh"
+
 sudo pacman -Sy \
     yubikey-manager \
     libfido2 \
