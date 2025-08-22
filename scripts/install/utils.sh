@@ -14,10 +14,7 @@ clear
 GREEN='\033[0;32m'
 NONE='\033[0m'
 
-sudo pacman -Sy \
-    btop \
-    fastfetch \
-    tree \
-    unzip \
-    zoxide \
-    --noconfirm
+PKG_FILE="$HOME/dotfiles/packages/utils/utils-pacman.txt"
+mapfile -t PKGS < <(grep -Ev '^\s*#' "$PKG_FILE")
+sudo pacman -Sy "${PKGS[@]}" --noconfirm
+

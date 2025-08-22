@@ -1,0 +1,6 @@
+# Terminal utilities
+btop
+fastfetch
+tree
+unzip
+zoxide
