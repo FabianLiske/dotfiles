@@ -16,4 +16,11 @@
 | [work.sh](/scripts/work.sh) | Currently unused |
 
 ## To Do
-- [ ] Move applciation lists to seperate files for easier maintenance?
+- [ ] Move applciation lists to seperate files for easier maintenance
+- [ ] Separate out scripts into direcotries by use
+- [ ] Adjust README
+
+## Notes
+- The Plan:
+    - Move Packages to unified lists, one for each package manager
+    - The install Script just installs everything at once, the check for existing packages should not take too long

@@ -1,0 +1,59 @@
+# Windowmanager
+
+hyprland
+hyprland-qtutils
+hyprlock
+hypridle
+hyprpaper
+hyprshot
+qt5-wayland
+qt6-wayland
+xorg-wayland
+xdg-desktop-portal-hyprland
+
+# System UI
+waybar
+wofi
+mako
+libnotify
+wl-clipboard
+playerctl
+
+# Displaymanager
+sddm
+xdg-desktop-portal-gtk
+
+# Network
+networkmanager
+network-manager-applet
+
+# Audio
+
+pavucontrol
+pipewire
+pipewire-pulse
+wireplumber
+
+# Media
+
+gthumb
+obs-studio
+mpv
+
+# Filemanager
+thunar
+thunar-archive-plugin
+thunar-volman
+
+# Terminal
+
+kitty
+starship
+btop
+fastfetch
+tree
+unzip
+
+# Comms
+
+discord

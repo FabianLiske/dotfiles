@@ -28,38 +28,6 @@ figlet "Hyprland"
 echo -e "${NONE}"
 
 sudo pacman -Sy \
-    brightnessctl \
-    hyprland \
-    hyprland-qtutils \
-    hyprlock \
-    hypridle \
-    hyprpaper \
-    hyprshot \
-    gthumb \
-    kitty \
-    libnotify \
-    mako \
-    mpv \
-    networkmanager \
-    network-manager-applet \
-    pavucontrol \
-    pipewire \
-    pipewire-pulse \
-    playerctl \
-    qt5-wayland \
-    qt6-wayland \
-    sddm \
-    starship \
-    thunar \
-    thunar-archive-plugin \
-    thunar-volman \
-    waybar \
-    wireplumber \
-    wl-clipboard \
-    wofi \
-    xdg-desktop-portal-hyprland \
-    xdg-desktop-portal-gtk \
-    xorg-xwayland \
     --noconfirm
 
 yay -S \
