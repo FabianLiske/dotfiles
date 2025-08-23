@@ -2,5 +2,6 @@
 btop
 fastfetch
 tree
+net-snmp
 unzip
 zoxide
