@@ -3,3 +3,4 @@ base-devel
 git
 docker
 docker-compose
+rpi-imager
