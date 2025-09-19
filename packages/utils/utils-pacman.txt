@@ -5,3 +5,7 @@ tree
 net-snmp
 unzip
 zoxide
+pngquant
+oxipng
+imagemagick 
+parallel
