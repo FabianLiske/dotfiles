@@ -1,0 +1,4 @@
+# Miscellaneous user applications
+discord
+handbrake
+obs-studio

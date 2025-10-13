@@ -1,0 +1,6 @@
+# Developer tools
+base-devel
+git
+docker
+docker-compose
+rpi-imager

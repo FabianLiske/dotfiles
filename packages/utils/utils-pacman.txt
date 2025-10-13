@@ -1,0 +1,11 @@
+# Terminal utilities
+btop
+fastfetch
+tree
+net-snmp
+unzip
+zoxide
+pngquant
+oxipng
+imagemagick 
+parallel

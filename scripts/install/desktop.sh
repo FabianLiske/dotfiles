@@ -21,51 +21,17 @@ sudo sed -i "s/SRCEXT=.*/SRCEXT='.src.tar'/g" /etc/makepkg.conf
 
 
 # Hyprland packages
-# TODO: separate out groups of packages into individual files
-
 echo -e "${GREEN}"
 figlet "Hyprland"
 echo -e "${NONE}"
 
-sudo pacman -Sy \
-    brightnessctl \
-    hyprland \
-    hyprland-qtutils \
-    hyprlock \
-    hypridle \
-    hyprpaper \
-    hyprshot \
-    gthumb \
-    kitty \
-    libnotify \
-    mako \
-    mpv \
-    networkmanager \
-    network-manager-applet \
-    pavucontrol \
-    pipewire \
-    pipewire-pulse \
-    playerctl \
-    qt5-wayland \
-    qt6-wayland \
-    sddm \
-    starship \
-    thunar \
-    thunar-archive-plugin \
-    thunar-volman \
-    waybar \
-    wireplumber \
-    wl-clipboard \
-    wofi \
-    xdg-desktop-portal-hyprland \
-    xdg-desktop-portal-gtk \
-    xorg-xwayland \
-    --noconfirm
+PKG_FILE="$HOME/dotfiles/packages/desktop/desktop-pacman.txt"
+mapfile -t PKGS < <(grep -Ev '^\s*#' "$PKG_FILE")
+sudo pacman -Sy "${PKGS[@]}" --noconfirm
 
-yay -S \
-    catppuccin-cursors-macchiato \
-    wlogout \
-    --noconfirm
+AUR_FILE="$HOME/dotfiles/packages/desktop/desktop-yay.txt"
+mapfile -t AUR_PKGS < <(grep -Ev '^\s*#' "$AUR_FILE")
+yay -S "${AUR_PKGS[@]}" --noconfirm
 
 sudo systemctl enable NetworkManager
 sudo systemctl enable sddm
@@ -83,3 +49,4 @@ echo -e "${NONE}"
 
 echo
 echo "DONE! Please reboot your system!"
+

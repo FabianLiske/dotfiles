@@ -1,0 +1,6 @@
+# Base tools required by other scripts
+age
+curl
+jq
+figlet
+wget

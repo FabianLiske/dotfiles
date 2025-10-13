@@ -14,10 +14,7 @@ clear
 GREEN='\033[0;32m'
 NONE='\033[0m'
 
-sudo pacman -Sy \
-    age \
-    curl \
-    jq \
-    figlet \
-    wget \
-    --noconfirm
+PKG_FILE="$HOME/dotfiles/packages/required/required-pacman.txt"
+mapfile -t PKGS < <(grep -Ev '^\s*#' "$PKG_FILE")
+sudo pacman -Sy "${PKGS[@]}" --noconfirm
+

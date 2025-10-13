@@ -3,3 +3,5 @@ Just my configs and some installation scripts. This setup assumes an Arch Instal
 
 ## To Do
 - [ ] Write decent README
+- [ ] Check current encryption setup (I forgor)
+- [ ] Add RKs
