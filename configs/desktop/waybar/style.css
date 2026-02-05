@@ -93,6 +93,16 @@
     background-color: @red;
     color: @base;
 }
+#custom-vpn {
+    border-radius: 4px;
+    margin: 6px 3px;
+    padding: 6px 12px;
+    font-weight: bold;
+}
+/* Zustand via class aus vpnstatus */
+#custom-vpn.vpn-on  { background-color: @teal;  color: @base; }
+#custom-vpn.vpn-off { background-color: @overlay1; color: @base; }
+
 #custom-netq {
     background-color: @red;
     color: @base;

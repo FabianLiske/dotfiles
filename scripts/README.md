@@ -18,6 +18,23 @@
 | [deploy_desktop.sh](/scripts/deploy/deploy_desktop.sh) | Copies configuration files for the desktop |
 | [deploy_utils.sh](/scripts/deploy/deploy_utils.sh) | Copies configuration files for terminal utils |
 
+## VPN Stuff
+```bash
+sudo visudo -f /etc/sudoers.d/waybar-wg
+```
+Then set 
+```
+faba ALL=(root) NOPASSWD: /usr/bin/systemctl start wg-quick@mullvad.service, /usr/bin/systemctl stop wg-quick@mullvad.service
+```
+Then copy this script and set perms
+
+```bash
+mkdir -p "$HOME/.local/bin"
+cp ./configs/network/* ~/.local/bin/
+chmod +x ~/.local/bin/vpnctl ~/.local/bin/vpnstatus
+```
+
+
 ## Misc
 
 | Script | Purpose |

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SERVICE="wg-quick@mullvad.service"
+
+if systemctl is-active --quiet "$SERVICE"; then
+  echo '{"text":"󰒘 Mullvad","class":"vpn-on","tooltip":"Mullvad: ON (Left click: toggle, Right click: Cisco)"}'
+else
+  echo '{"text":"󰦞 Mullvad","class":"vpn-off","tooltip":"Mullvad: OFF (Left click: toggle, Right click: Cisco)"}'
+fi

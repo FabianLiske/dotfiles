@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SERVICE="wg-quick@mullvad.service"
+
+mullvad_on() { systemctl is-active --quiet "$SERVICE"; }
+
+toggle_mullvad() {
+  if mullvad_on; then
+    sudo systemctl stop "$SERVICE"
+  else
+    sudo systemctl start "$SERVICE"
+  fi
+}
+
+mullvad_off() {
+  sudo systemctl stop "$SERVICE" || true
+}
+
+start_cisco_gui() {
+  # Try common launchers/paths
+  if command -v vpnui >/dev/null 2>&1; then
+    nohup vpnui >/dev/null 2>&1 &
+    exit 0
+  fi
+
+  for p in \
+    /opt/cisco/secureclient/bin/vpnui \
+    /opt/cisco/anyconnect/bin/vpnui \
+    /opt/cisco/secureclient/vpnui \
+    /opt/cisco/anyconnect/vpnui
+  do
+    if [ -x "$p" ]; then
+      nohup "$p" >/dev/null 2>&1 &
+      exit 0
+    fi
+  done
+
+  # Fallback: try desktop launcher if present
+  if command -v gtk-launch >/dev/null 2>&1; then
+    gtk-launch cisco-secure-client >/dev/null 2>&1 && exit 0 || true
+    gtk-launch anyconnect >/dev/null 2>&1 && exit 0 || true
+  fi
+
+  # Last resort: notify in terminal
+  notify-send "Cisco VPN" "Konnte Cisco Secure Client GUI nicht starten (vpnui nicht gefunden)."
+}
+
+case "${1:-}" in
+  toggle) toggle_mullvad ;;
+  off)    mullvad_off ;;
+  cisco)  mullvad_off; start_cisco_gui ;;
+  *)      echo "usage: vpnctl {toggle|off|cisco}" >&2; exit 2 ;;
+esac

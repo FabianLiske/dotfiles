@@ -11,6 +11,7 @@
     "custom/units",
     "custom/updates",
     "network",
+    "custom/vpn",
     "custom/netq",
     "pulseaudio",
     "memory",
@@ -35,6 +36,14 @@
     "format-disconnected": " Disconnected",
     "interval": 1,
     "tooltip": false
+  },
+    "custom/vpn": {
+    "interval": 2,
+    "return-type": "json",
+    "exec": "~/.local/bin/vpnstatus",
+    "on-click": "~/.local/bin/vpnctl toggle",
+    "on-click-right": "~/.local/bin/vpnctl cisco",
+    "tooltip": true
   },
   "custom/netq": {
     "interval": 5,
