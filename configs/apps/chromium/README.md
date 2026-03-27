@@ -9,3 +9,4 @@ In order to automatically install extensions and apply some settings the [Chromi
 | [User-Agent Switcher](https://chromewebstore.google.com/detail/user-agent-switcher-for-c/djflhoibgkdhkhhcedjiklpkjnoahfmg) | Agent Switche | djflhoibgkdhkhhcedjiklpkjnoahfmg |
 | [FireShot](https://chromewebstore.google.com/detail/nehmen-sie-vollst%C3%A4ndige-w/mcbpblocgmgfnpjjppndjkmgjaogfceg) | Screenshot utility | mcbpblocgmgfnpjjppndjkmgjaogfceg |
 | [LinkDing](https://chromewebstore.google.com/detail/linkding-extension/beakmhbijpdhipnjhnclmhgjlddhidpe) | Bookmark Manager | beakmhbijpdhipnjhnclmhgjlddhidpe |
+| [Custom New Tab URL](https://chromewebstore.google.com/detail/custom-new-tab-url/llpkgglbglhcmccbkihpkeckfdlfbopa) | Sets URL for new tabs | llpkgglbglhcmccbkihpkeckfdlfbopa |
