@@ -70,6 +70,10 @@ hl.config({
     enabled = true,
   },
 
+  binds = {
+    window_direction_monitor_fallback = true,
+  },
+
   dwindle = {
     preserve_split = true,
   },

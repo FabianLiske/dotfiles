@@ -22,24 +22,17 @@ hl.bind(mainMod .. " + CTRL + left", hl.dsp.window.move({ into_or_create_group =
 hl.bind(mainMod .. " + CTRL + right", hl.dsp.window.move({ into_or_create_group = "right" }))
 hl.bind(mainMod .. " + CTRL + up", hl.dsp.window.move({ out_of_group = true }))
 hl.bind(mainMod .. " + CTRL + down", hl.dsp.group.toggle())
-hl.bind(mainMod .. " + ALT + left", hl.dsp.window.swap({ direction = "left" }))
-hl.bind(mainMod .. " + ALT + right", hl.dsp.window.swap({ direction = "right" }))
+hl.bind(mainMod .. " + ALT + left", hl.dsp.window.move({ direction = "left" }))
+hl.bind(mainMod .. " + ALT + right", hl.dsp.window.move({ direction = "right" }))
+hl.bind(mainMod .. " + ALT + up", hl.dsp.window.move({ direction = "up" }))
+hl.bind(mainMod .. " + ALT + down", hl.dsp.window.move({ direction = "down" }))
 hl.bind(mainMod .. " + TAB", hl.dsp.group.next())
 hl.bind(mainMod .. " + SHIFT + TAB", hl.dsp.group.prev())
-
-for i = 1, 10 do
-  local key = i % 10
-  hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
-  hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
-end
 
 hl.bind(mainMod .. " + SHIFT + left", hl.dsp.window.move({ monitor = "HDMI-A-1", follow = true }))
 hl.bind(mainMod .. " + SHIFT + right", hl.dsp.window.move({ monitor = "DP-2", follow = true }))
 hl.bind(mainMod .. " + CTRL + SHIFT + left", hl.dsp.focus({ monitor = "HDMI-A-1" }))
 hl.bind(mainMod .. " + CTRL + SHIFT + right", hl.dsp.focus({ monitor = "DP-2" }))
-
-hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
