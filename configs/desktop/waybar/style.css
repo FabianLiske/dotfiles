@@ -77,6 +77,16 @@
     background-color: @peach;
     color: @base;
 }
+#custom-hyprworkspace {
+    background-color: @peach;
+    color: @base;
+}
+#custom-hyprworkspace.empty {
+    background-color: transparent;
+    color: transparent;
+    margin: 0;
+    padding: 0;
+}
 #window {
     background-color: @peach;
     color: @base;
@@ -135,6 +145,7 @@
 #pulseaudio,
 #window,
 #custom-lock,
+#custom-hyprworkspace,
 #custom-netq,
 #custom-power,
 #custom-reboot,

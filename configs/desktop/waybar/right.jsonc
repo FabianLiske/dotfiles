@@ -5,7 +5,7 @@
   "height": 40,
   "spacing": 0,
   "modules-left": [
-    "hyprland/window"
+    "custom/hyprworkspace"
   ],
   "modules-right": [
     "custom/units",
@@ -18,6 +18,16 @@
     "cpu",
     "disk"
   ],
+  "custom/hyprworkspace": {
+    "return-type": "json",
+    "escape": false,
+    "exec": "/usr/bin/python3 /home/$USER/.config/waybar/hyprworkspace.py --all-visible",
+    "on-click": "hyprctl dispatch 'hl.dsp.group.next()'",
+    "on-click-right": "hyprctl dispatch 'hl.dsp.group.prev()'",
+    "on-scroll-up": "hyprctl dispatch 'hl.dsp.group.next()'",
+    "on-scroll-down": "hyprctl dispatch 'hl.dsp.group.prev()'",
+    "tooltip": true
+  },
   "custom/updates": {
     "interval": 1800,
     "exec": "bash -lc 'echo 󰚰 $(checkupdates 2>/dev/null | wc -l)'",

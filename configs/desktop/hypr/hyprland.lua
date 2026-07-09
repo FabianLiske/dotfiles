@@ -78,6 +78,49 @@ hl.config({
     new_status = "master",
   },
 
+  group = {
+    insert_after_current = true,
+    focus_removed_window = true,
+    merge_groups_on_drag = true,
+    merge_groups_on_groupbar = true,
+    group_on_movetoworkspace = true,
+
+    col = {
+      border_active = {
+        colors = {
+          "rgba(" .. colors.mauveAlpha .. "ee)",
+          "rgba(" .. colors.lavenderAlpha .. "ee)",
+        },
+        angle = 30,
+      },
+      border_inactive = "rgba(" .. colors.overlay0Alpha .. "aa)",
+      border_locked_active = "rgba(" .. colors.peachAlpha .. "ee)",
+      border_locked_inactive = "rgba(" .. colors.surface2Alpha .. "aa)",
+    },
+
+    groupbar = {
+      enabled = false,
+      render_titles = false,
+      scrolling = true,
+      stacked = false,
+      height = 4,
+      indicator_height = 3,
+      indicator_gap = 0,
+      gaps_in = 0,
+      gaps_out = 0,
+      keep_upper_gap = false,
+      gradients = false,
+      rounding = 0,
+      round_only_edges = true,
+      col = {
+        active = "rgba(" .. colors.lavenderAlpha .. "ee)",
+        inactive = "rgba(" .. colors.overlay0Alpha .. "aa)",
+        locked_active = "rgba(" .. colors.peachAlpha .. "ee)",
+        locked_inactive = "rgba(" .. colors.surface2Alpha .. "aa)",
+      },
+    },
+  },
+
   misc = {
     force_default_wallpaper = 0,
     disable_hyprland_logo = true,
@@ -108,15 +151,16 @@ hl.animation({ leaf = "windowsIn", enabled = true, speed = 4.1, bezier = "easeOu
 hl.animation({ leaf = "windowsOut", enabled = true, speed = 1.49, bezier = "linear", style = "popin 87%" })
 hl.animation({ leaf = "fadeIn", enabled = true, speed = 1.73, bezier = "almostLinear" })
 hl.animation({ leaf = "fadeOut", enabled = true, speed = 1.46, bezier = "almostLinear" })
-hl.animation({ leaf = "fade", enabled = true, speed = 3.03, bezier = "quick" })
+hl.animation({ leaf = "fade", enabled = true, speed = 1.6, bezier = "quick" })
+hl.animation({ leaf = "fadeSwitch", enabled = false, speed = 1, bezier = "linear" })
 hl.animation({ leaf = "layers", enabled = true, speed = 3.81, bezier = "easeOutQuint" })
 hl.animation({ leaf = "layersIn", enabled = true, speed = 4, bezier = "easeOutQuint", style = "fade" })
 hl.animation({ leaf = "layersOut", enabled = true, speed = 1.5, bezier = "linear", style = "fade" })
 hl.animation({ leaf = "fadeLayersIn", enabled = true, speed = 1.79, bezier = "almostLinear" })
 hl.animation({ leaf = "fadeLayersOut", enabled = true, speed = 1.39, bezier = "almostLinear" })
-hl.animation({ leaf = "workspaces", enabled = true, speed = 1.94, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "workspacesIn", enabled = true, speed = 1.21, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "workspacesOut", enabled = true, speed = 1.94, bezier = "almostLinear", style = "fade" })
+hl.animation({ leaf = "workspaces", enabled = true, speed = 1.0, bezier = "quick", style = "fade" })
+hl.animation({ leaf = "workspacesIn", enabled = true, speed = 0.8, bezier = "quick", style = "fade" })
+hl.animation({ leaf = "workspacesOut", enabled = true, speed = 1.0, bezier = "quick", style = "fade" })
 
 hl.device({
   name = "epic-mouse-v1",

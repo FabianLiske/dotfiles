@@ -8,7 +8,8 @@ hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("hyprshot -m region"))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("wofi --conf ~/.config/wofi/config --style ~/.config/wofi/macchiato.css"))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
-hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))
+hl.bind(mainMod .. " + J", hl.dsp.group.next())
+hl.bind(mainMod .. " + G", hl.dsp.group.toggle())
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("pkill waybar; waybar --config ~/.config/waybar/left.jsonc & waybar --config ~/.config/waybar/right.jsonc &"))
 hl.bind(mainMod .. " + H", hl.dsp.exec_cmd("hyprctl reload"))
 
@@ -17,14 +18,25 @@ hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "down" }))
 
+hl.bind(mainMod .. " + CTRL + left", hl.dsp.window.move({ into_or_create_group = "left" }))
+hl.bind(mainMod .. " + CTRL + right", hl.dsp.window.move({ into_or_create_group = "right" }))
+hl.bind(mainMod .. " + CTRL + up", hl.dsp.window.move({ out_of_group = true }))
+hl.bind(mainMod .. " + CTRL + down", hl.dsp.group.toggle())
+hl.bind(mainMod .. " + ALT + left", hl.dsp.window.swap({ direction = "left" }))
+hl.bind(mainMod .. " + ALT + right", hl.dsp.window.swap({ direction = "right" }))
+hl.bind(mainMod .. " + TAB", hl.dsp.group.next())
+hl.bind(mainMod .. " + SHIFT + TAB", hl.dsp.group.prev())
+
 for i = 1, 10 do
   local key = i % 10
   hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
   hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
-hl.bind(mainMod .. " + SHIFT + left", hl.dsp.workspace.move({ monitor = "HDMI-A-1" }))
-hl.bind(mainMod .. " + SHIFT + right", hl.dsp.workspace.move({ monitor = "DP-2" }))
+hl.bind(mainMod .. " + SHIFT + left", hl.dsp.window.move({ monitor = "HDMI-A-1", follow = true }))
+hl.bind(mainMod .. " + SHIFT + right", hl.dsp.window.move({ monitor = "DP-2", follow = true }))
+hl.bind(mainMod .. " + CTRL + SHIFT + left", hl.dsp.focus({ monitor = "HDMI-A-1" }))
+hl.bind(mainMod .. " + CTRL + SHIFT + right", hl.dsp.focus({ monitor = "DP-2" }))
 
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
