@@ -1,4 +1,24 @@
 local mainMod = "SUPER"
+local leftMonitorDescription = "Samsung Electric Company Odyssey G60SD HNBY100467"
+local ultrawideDescription = "Samsung Electric Company Odyssey G93SD HNTL101430"
+
+local function monitorName(description, fallback)
+  for _, monitor in ipairs(hl.get_monitors()) do
+    if monitor.description == description then
+      return monitor.name
+    end
+  end
+
+  return fallback
+end
+
+local function leftMonitorName()
+  return monitorName(leftMonitorDescription, "HDMI-*")
+end
+
+local function ultrawideMonitorName()
+  return monitorName(ultrawideDescription, "DP-*")
+end
 
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd("kitty"))
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
@@ -29,10 +49,18 @@ hl.bind(mainMod .. " + ALT + down", hl.dsp.window.move({ direction = "down" }))
 hl.bind(mainMod .. " + TAB", hl.dsp.group.next())
 hl.bind(mainMod .. " + SHIFT + TAB", hl.dsp.group.prev())
 
-hl.bind(mainMod .. " + SHIFT + left", hl.dsp.window.move({ monitor = "HDMI-A-1", follow = true }))
-hl.bind(mainMod .. " + SHIFT + right", hl.dsp.window.move({ monitor = "DP-2", follow = true }))
-hl.bind(mainMod .. " + CTRL + SHIFT + left", hl.dsp.focus({ monitor = "HDMI-A-1" }))
-hl.bind(mainMod .. " + CTRL + SHIFT + right", hl.dsp.focus({ monitor = "DP-2" }))
+hl.bind(mainMod .. " + SHIFT + left", function()
+  hl.dispatch(hl.dsp.window.move({ monitor = leftMonitorName(), follow = true }))
+end)
+hl.bind(mainMod .. " + SHIFT + right", function()
+  hl.dispatch(hl.dsp.window.move({ monitor = ultrawideMonitorName(), follow = true }))
+end)
+hl.bind(mainMod .. " + CTRL + SHIFT + left", function()
+  hl.dispatch(hl.dsp.focus({ monitor = leftMonitorName() }))
+end)
+hl.bind(mainMod .. " + CTRL + SHIFT + right", function()
+  hl.dispatch(hl.dsp.focus({ monitor = ultrawideMonitorName() }))
+end)
 
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })

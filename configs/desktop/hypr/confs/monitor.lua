@@ -1,5 +1,5 @@
 hl.monitor({
-  output = "HDMI-A-1",
+  output = "desc:Samsung Electric Company Odyssey G60SD HNBY100467",
   mode = "2560x1440@119.99900",
   position = "0x0",
   scale = 1.25,
@@ -8,7 +8,7 @@ hl.monitor({
 })
 
 hl.monitor({
-  output = "DP-2",
+  output = "desc:Samsung Electric Company Odyssey G93SD HNTL101430",
   mode = "5120x1440@119.99",
   position = "2048x0",
   scale = 1.25,

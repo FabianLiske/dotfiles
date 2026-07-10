@@ -17,6 +17,8 @@ APP_NAMES = {
     "kitty": "Kitty",
 }
 
+ULTRAWIDE_DESCRIPTION = "Samsung Electric Company Odyssey G93SD HNTL101430"
+
 WATCH_EVENTS = (
     "activewindow",
     "changegroupactive",
@@ -134,7 +136,11 @@ def format_workspaces(monitor_name=None, all_visible=False):
         selected_monitors = [monitor for monitor in monitors if not monitor.get("disabled")]
         selected_monitors.sort(key=lambda monitor: (monitor.get("x", 0), monitor.get("y", 0)))
     else:
-        selected_monitors = [monitor for monitor in monitors if monitor.get("name") == monitor_name]
+        selected_monitors = [
+            monitor
+            for monitor in monitors
+            if monitor.get("name") == monitor_name or monitor.get("description") == monitor_name
+        ]
 
     if not selected_monitors:
         return {"text": "", "class": "empty", "tooltip": ""}
@@ -213,7 +219,7 @@ def watch(monitor_name, all_visible):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--monitor", default="DP-2")
+    parser.add_argument("--monitor", default=ULTRAWIDE_DESCRIPTION)
     parser.add_argument("--all-visible", action="store_true")
     args = parser.parse_args()
     watch(args.monitor, args.all_visible)
